@@ -3,8 +3,17 @@ const sass = require('gulp-sass')(require('sass'));
 const rename = require('gulp-rename');
 
 const browserSync = require('browser-sync');
+const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
+
+
+
+gulp.task('copyJS', function () {
+    return gulp.src('app/js/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('public/js/'));
+});
 
 gulp.task('sassToCSS', function () {
     return gulp.src('app/scss/*.scss')
@@ -30,6 +39,7 @@ gulp.task('serve', function () {
 
 gulp.task('watchFiles', function () {
     gulp.watch('app/scss/*.scss', gulp.series('sassToCSS'));
+    gulp.watch('app/js/*.js', gulp.series('copyJS'));
 });
 
 gulp.task('default', gulp.parallel('watchFiles', 'serve'));
