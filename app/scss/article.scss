@@ -80,4 +80,35 @@
             }
         }
     }
+
+    .nav {
+        @extend %flexDisplay;
+        align-items: center;
+        margin-top: 50px;
+
+        >div {
+            @extend %flexDisplay;
+            align-items: center;
+
+            &.prev-post {
+                img {
+                    margin-right: 10px;
+
+                    a {
+                        color: $mainColor;
+
+                        &:hover {
+                            color: $hrefColor;
+                        }
+                    }
+                }
+            }
+
+            &.next-post {
+                img {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
 }
