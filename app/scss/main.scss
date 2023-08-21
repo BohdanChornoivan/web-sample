@@ -84,22 +84,10 @@ header {
     margin-top: 50px;
 
     h2 {
+        @extend %heading-with-line;
         font-size: 36px;
         font-weight: 800;
-        color: #000;
         text-transform: uppercase;
-        position: relative;
-
-        &::before {
-            content: "";
-            display: inline-block;
-            width: 30px;
-            height: 3px;
-            background: $mainColor;
-            position: absolute;
-            bottom: 3px;
-            left: 0px;
-        }
     }
 
     .intro-text {
