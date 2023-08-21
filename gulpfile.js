@@ -26,7 +26,6 @@ gulp.task('sassToCSS', function () {
             cascade: false
         }))
         .pipe(cleanCSS())
-        .pipe(rename('style.css'))
         .pipe(gulp.dest('public/css/'));
 });
 
