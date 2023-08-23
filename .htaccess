@@ -2,4 +2,4 @@ ServerSignature Off
 AddDefaultCharset UTF-8
 
 AddType image/svg+xml svg svgz
-AddEncoding gzip svgz
+AddEncoding gzip svgzgit 
